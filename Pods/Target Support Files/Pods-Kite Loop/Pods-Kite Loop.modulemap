@@ -1,0 +1,6 @@
+framework module Pods_Kite_Loop {
+  umbrella header "Pods-Kite Loop-umbrella.h"
+
+  export *
+  module * { export * }
+}

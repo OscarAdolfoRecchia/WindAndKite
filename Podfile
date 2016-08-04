@@ -22,7 +22,9 @@ target 'Kite Loop' do
     pod 'AWSSimpleDB'
     pod 'AWSSNS'
     pod 'AWSSQS'
-
+    
+    pod 'SwiftyJSON'
+    pod 'SlideMenuControllerSwift'
   pod 'DrawerController', '~> 1.0'
   # Pods for Kite Loop
  

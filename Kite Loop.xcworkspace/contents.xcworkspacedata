@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MagicSeaweed.html">
+   </FileRef>
+   <FileRef
       location = "group:Kite Loop.xcodeproj">
    </FileRef>
    <FileRef
