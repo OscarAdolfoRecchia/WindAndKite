@@ -5,6 +5,9 @@
       location = "group:MagicSeaweed.html">
    </FileRef>
    <FileRef
+      location = "group:MagicSeaweed2.html">
+   </FileRef>
+   <FileRef
       location = "group:Kite Loop.xcodeproj">
    </FileRef>
    <FileRef
