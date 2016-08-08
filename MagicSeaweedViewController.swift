@@ -12,6 +12,7 @@ class MagicSeaweedViewController: UIViewController {
 
   
     @IBOutlet weak var scrollView: UIScrollView!
+    var spot:Spot!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,19 +22,11 @@ class MagicSeaweedViewController: UIViewController {
         let widgetView2:UIWebView = UIWebView(frame: CGRectMake(UIScreen.mainScreen().bounds.width, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
         
         
-        
-        
-        let localfilePath = NSBundle.mainBundle().URLForResource("MagicSeaweed", withExtension: "html");
-        let myRequest = NSURLRequest(URL: localfilePath!);
-        widgetView1.loadRequest(myRequest);
-        
+        //load in html for 1 widget
+        widgetView1.loadHTMLString("<html><head></head><body><div style=\"width:400px;background:#fff\"><script type=\"text/javascript\" src=\"http://magicseaweed.com/syndicate/index.php?\(self.spot.mgswWidget1URL)\"></script><p><div style=\"font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;\"><a href=\"http://magicseaweed.com/Strandhill-Surf-Report/51/\" style=\"color:#000;\">Strandhill Surf Report and Forecast</a></div></p></div></body></html>", baseURL: nil)
 
-//        let url = NSURL (string: "https://www.windguru.cz/int/index.php?sc=47721&sty=m_spot");
-//        let requestObj = NSURLRequest(URL: url!);
-//        widgetView.loadRequest(requestObj);
-        let localfilePath2 = NSBundle.mainBundle().URLForResource("MagicSeaweed2", withExtension: "html");
-        let myRequest2 = NSURLRequest(URL: localfilePath2!);
-        widgetView2.loadRequest(myRequest2);
+        //load in html for second widget
+        widgetView2.loadHTMLString("<html><head></head><body><div style=\"width:400px;background:#fff\"><script type=\"text/javascript\" src=\"http://magicseaweed.com/syndicate/index.php?\(self.spot.mgswWidget2URL)\"></script><p><div style=\"font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;\"><a href=\"http://magicseaweed.com/Strandhill-Surf-Report/51/\" style=\"color:#000;\">Strandhill Surf Report and Forecast</a></div></p></div></body></html>", baseURL: nil)
         
         self.scrollView.pagingEnabled = true
         self.scrollView.contentSize = CGSizeMake(UIScreen.mainScreen().bounds.width * 2, UIScreen.mainScreen().bounds.height - 200)

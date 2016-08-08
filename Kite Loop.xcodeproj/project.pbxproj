@@ -10,6 +10,8 @@
 		9B0CD3681D4BA8E10015FC17 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CD3671D4BA8E10015FC17 /* Spot.swift */; };
 		9B0CD36A1D4BBCA90015FC17 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CD3691D4BBCA90015FC17 /* MenuViewController.swift */; };
 		9B0CD36C1D4BBFC40015FC17 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CD36B1D4BBFC40015FC17 /* MenuCell.swift */; };
+		9B0F9AC41D58ADFF00AE38C9 /* menu-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B0F9AC31D58ADFF00AE38C9 /* menu-arrow.png */; };
+		9B0F9AC61D58CBC100AE38C9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F9AC51D58CBC100AE38C9 /* User.swift */; };
 		9B115D811D4B71390054917D /* surf-sign.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B115D801D4B71390054917D /* surf-sign.jpg */; };
 		9B115D831D4B71D40054917D /* surf-sign-sports-icon-symbol-water-surfing_121-99303.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B115D821D4B71D40054917D /* surf-sign-sports-icon-symbol-water-surfing_121-99303.jpg */; };
 		9B115D851D4B722B0054917D /* sports-icon-png-3277.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B115D841D4B722B0054917D /* sports-icon-png-3277.png */; };
@@ -22,6 +24,13 @@
 		9B2983D81D424D3800CB5F0E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2983D71D424D3800CB5F0E /* Post.swift */; };
 		9B2D67471D50E6C200F50312 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2D67461D50E6C200F50312 /* WeatherService.swift */; };
 		9B2D67491D511B4400F50312 /* Sports-Kitesurfing-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2D67481D511B4300F50312 /* Sports-Kitesurfing-icon.png */; };
+		9B46C38A1D54F4C40059D249 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B46C3891D54F4C40059D249 /* MapViewController.swift */; };
+		9B46C38C1D54F5240059D249 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B46C38B1D54F5240059D249 /* globe.png */; };
+		9B46C38E1D54F55C0059D249 /* globe (1).png in Resources */ = {isa = PBXBuildFile; fileRef = 9B46C38D1D54F55C0059D249 /* globe (1).png */; };
+		9B46C3901D55009C0059D249 /* cloud3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B46C38F1D55009C0059D249 /* cloud3.png */; };
+		9B46C3921D5500DB0059D249 /* thermometer-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B46C3911D5500DB0059D249 /* thermometer-512.png */; };
+		9B46C3951D5501DA0059D249 /* Celsius.svg_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B46C3931D5501DA0059D249 /* Celsius.svg_0.png */; };
+		9B46C3961D5501DA0059D249 /* humidity.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B46C3941D5501DA0059D249 /* humidity.png */; };
 		9B4F28D51D53A88100CEBD1E /* white-clouds-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B4F28D41D53A88100CEBD1E /* white-clouds-256.png */; };
 		9B4F28D91D53AEC400CEBD1E /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B4F28D81D53AEC400CEBD1E /* chat.png */; };
 		9B4F28DB1D53AF7200CEBD1E /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4F28DA1D53AF7200CEBD1E /* WeatherViewController.swift */; };
@@ -35,6 +44,9 @@
 		9B695CAA1D524DDE00E2DF39 /* MagicSeaweed.html in Resources */ = {isa = PBXBuildFile; fileRef = 9B695CA91D524DDE00E2DF39 /* MagicSeaweed.html */; };
 		9B695CAC1D52574900E2DF39 /* MagicSeaweedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B695CAB1D52574900E2DF39 /* MagicSeaweedView.swift */; };
 		9B7E929B1D538A7700DB9D13 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7E929A1D538A7700DB9D13 /* ScrollViewController.swift */; };
+		9B9403561D54999B00A2A14C /* images.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9B9403551D54999B00A2A14C /* images.jpeg */; };
+		9B9403581D549FCD00A2A14C /* WebCamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9403571D549FCD00A2A14C /* WebCamViewController.swift */; };
+		9B94035A1D54A0F300A2A14C /* webcam-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B9403591D54A0F300A2A14C /* webcam-icon.png */; };
 		9BD3F79A1D412DD000C6F4BC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD3F7991D412DD000C6F4BC /* DataService.swift */; };
 		9BD3F79C1D41305200C6F4BC /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD3F79B1D41305200C6F4BC /* Firebase.framework */; };
 		9BD3F79E1D41317B00C6F4BC /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD3F79D1D41317B00C6F4BC /* libicucore.tbd */; };
@@ -90,6 +102,8 @@
 		9B0CD3671D4BA8E10015FC17 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		9B0CD3691D4BBCA90015FC17 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		9B0CD36B1D4BBFC40015FC17 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		9B0F9AC31D58ADFF00AE38C9 /* menu-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-arrow.png"; sourceTree = "<group>"; };
+		9B0F9AC51D58CBC100AE38C9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9B115D801D4B71390054917D /* surf-sign.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "surf-sign.jpg"; sourceTree = "<group>"; };
 		9B115D821D4B71D40054917D /* surf-sign-sports-icon-symbol-water-surfing_121-99303.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "surf-sign-sports-icon-symbol-water-surfing_121-99303.jpg"; sourceTree = "<group>"; };
 		9B115D841D4B722B0054917D /* sports-icon-png-3277.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sports-icon-png-3277.png"; sourceTree = "<group>"; };
@@ -102,6 +116,13 @@
 		9B2983D71D424D3800CB5F0E /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9B2D67461D50E6C200F50312 /* WeatherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		9B2D67481D511B4300F50312 /* Sports-Kitesurfing-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sports-Kitesurfing-icon.png"; sourceTree = "<group>"; };
+		9B46C3891D54F4C40059D249 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9B46C38B1D54F5240059D249 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		9B46C38D1D54F55C0059D249 /* globe (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe (1).png"; sourceTree = "<group>"; };
+		9B46C38F1D55009C0059D249 /* cloud3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud3.png; sourceTree = "<group>"; };
+		9B46C3911D5500DB0059D249 /* thermometer-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thermometer-512.png"; sourceTree = "<group>"; };
+		9B46C3931D5501DA0059D249 /* Celsius.svg_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Celsius.svg_0.png; sourceTree = "<group>"; };
+		9B46C3941D5501DA0059D249 /* humidity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humidity.png; sourceTree = "<group>"; };
 		9B4F28D41D53A88100CEBD1E /* white-clouds-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white-clouds-256.png"; sourceTree = "<group>"; };
 		9B4F28D81D53AEC400CEBD1E /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		9B4F28DA1D53AF7200CEBD1E /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +136,9 @@
 		9B695CA91D524DDE00E2DF39 /* MagicSeaweed.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = MagicSeaweed.html; sourceTree = "<group>"; };
 		9B695CAB1D52574900E2DF39 /* MagicSeaweedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicSeaweedView.swift; sourceTree = "<group>"; };
 		9B7E929A1D538A7700DB9D13 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		9B9403551D54999B00A2A14C /* images.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpeg; sourceTree = "<group>"; };
+		9B9403571D549FCD00A2A14C /* WebCamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebCamViewController.swift; sourceTree = "<group>"; };
+		9B9403591D54A0F300A2A14C /* webcam-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "webcam-icon.png"; sourceTree = "<group>"; };
 		9BD3F7991D412DD000C6F4BC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9BD3F79B1D41305200C6F4BC /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		9BD3F79D1D41317B00C6F4BC /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
@@ -191,6 +215,7 @@
 			children = (
 				9B2983D71D424D3800CB5F0E /* Post.swift */,
 				9B0CD3671D4BA8E10015FC17 /* Spot.swift */,
+				9B0F9AC51D58CBC100AE38C9 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -236,12 +261,14 @@
 			isa = PBXGroup;
 			children = (
 				9BD656CC1D4120CE008C15C6 /* ViewController.swift */,
-				9BD3F7B11D414E5100C6F4BC /* Feedvc.swift */,
-				9B0CD3691D4BBCA90015FC17 /* MenuViewController.swift */,
 				9BEE01931D522A3C00128DD5 /* SpotListViewController.swift */,
-				9B695CA41D52474B00E2DF39 /* MagicSeaweedViewController.swift */,
 				9B7E929A1D538A7700DB9D13 /* ScrollViewController.swift */,
 				9B4F28DA1D53AF7200CEBD1E /* WeatherViewController.swift */,
+				9B695CA41D52474B00E2DF39 /* MagicSeaweedViewController.swift */,
+				9BD3F7B11D414E5100C6F4BC /* Feedvc.swift */,
+				9B46C3891D54F4C40059D249 /* MapViewController.swift */,
+				9B9403571D549FCD00A2A14C /* WebCamViewController.swift */,
+				9B0CD3691D4BBCA90015FC17 /* MenuViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -281,11 +308,19 @@
 				9BD656F81D412133008C15C6 /* Main.storyboard */,
 				9BD656F91D412133008C15C6 /* LaunchScreen.storyboard */,
 				9BD656D11D4120CE008C15C6 /* Assets.xcassets */,
+				9B46C3931D5501DA0059D249 /* Celsius.svg_0.png */,
+				9B46C3941D5501DA0059D249 /* humidity.png */,
+				9B46C3911D5500DB0059D249 /* thermometer-512.png */,
+				9B46C38F1D55009C0059D249 /* cloud3.png */,
 				9B4F28E21D53BBDA00CEBD1E /* sun-badass.png */,
+				9B46C38D1D54F55C0059D249 /* globe (1).png */,
+				9B46C38B1D54F5240059D249 /* globe.png */,
 				9B4F28E01D53BB0200CEBD1E /* pict--vertical-separator-ms-windows-vista-user-interface-vector-stencils-library.png */,
 				9B4F28E41D53C1E500CEBD1E /* Compass (1).png */,
+				9B0F9AC31D58ADFF00AE38C9 /* menu-arrow.png */,
 				9B4F28DE1D53BAA800CEBD1E /* torn slit separator.png */,
 				9B4F28DC1D53B58D00CEBD1E /* live-rain-wallpapers-8.jpeg */,
+				9B9403551D54999B00A2A14C /* images.jpeg */,
 				9B4F28D81D53AEC400CEBD1E /* chat.png */,
 				9B4F28D41D53A88100CEBD1E /* white-clouds-256.png */,
 				9B2D67481D511B4300F50312 /* Sports-Kitesurfing-icon.png */,
@@ -294,6 +329,7 @@
 				9B115D821D4B71D40054917D /* surf-sign-sports-icon-symbol-water-surfing_121-99303.jpg */,
 				9B115D841D4B722B0054917D /* sports-icon-png-3277.png */,
 				9B115D801D4B71390054917D /* surf-sign.jpg */,
+				9B9403591D54A0F300A2A14C /* webcam-icon.png */,
 				9B22E2E81D491F2D00E784E6 /* images.png */,
 				9BD656D61D4120CE008C15C6 /* Info.plist */,
 			);
@@ -475,24 +511,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD3F7AD1D4146BD00C6F4BC /* heart-empty-128.png in Resources */,
+				9B46C38E1D54F55C0059D249 /* globe (1).png in Resources */,
 				9B115D811D4B71390054917D /* surf-sign.jpg in Resources */,
 				9B4F28E31D53BBDA00CEBD1E /* sun-badass.png in Resources */,
 				9B4F28DF1D53BAA800CEBD1E /* torn slit separator.png in Resources */,
+				9B9403561D54999B00A2A14C /* images.jpeg in Resources */,
 				9B4F28D51D53A88100CEBD1E /* white-clouds-256.png in Resources */,
 				9B4F28E51D53C1E500CEBD1E /* Compass (1).png in Resources */,
 				9BD656D21D4120CE008C15C6 /* Assets.xcassets in Resources */,
 				9B4F28E11D53BB0200CEBD1E /* pict--vertical-separator-ms-windows-vista-user-interface-vector-stencils-library.png in Resources */,
 				9B115D891D4B73220054917D /* megaphone-icon.png in Resources */,
+				9B46C3921D5500DB0059D249 /* thermometer-512.png in Resources */,
+				9B46C3901D55009C0059D249 /* cloud3.png in Resources */,
+				9B46C38C1D54F5240059D249 /* globe.png in Resources */,
 				9BD3F7AC1D4146BD00C6F4BC /* 6107-nicolas-cage.jpg in Resources */,
+				9B0F9AC41D58ADFF00AE38C9 /* menu-arrow.png in Resources */,
 				9BD656FB1D412133008C15C6 /* LaunchScreen.storyboard in Resources */,
 				9B115D831D4B71D40054917D /* surf-sign-sports-icon-symbol-water-surfing_121-99303.jpg in Resources */,
 				9B115D851D4B722B0054917D /* sports-icon-png-3277.png in Resources */,
 				9B4F28DD1D53B58D00CEBD1E /* live-rain-wallpapers-8.jpeg in Resources */,
+				9B94035A1D54A0F300A2A14C /* webcam-icon.png in Resources */,
 				9B4F28E71D53C5E200CEBD1E /* MagicSeaweed2.html in Resources */,
 				9B2D67491D511B4400F50312 /* Sports-Kitesurfing-icon.png in Resources */,
 				9B695CAA1D524DDE00E2DF39 /* MagicSeaweed.html in Resources */,
+				9B46C3951D5501DA0059D249 /* Celsius.svg_0.png in Resources */,
 				9B4F28D91D53AEC400CEBD1E /* chat.png in Resources */,
 				9B115D871D4B72B60054917D /* surf-sign-1X.png in Resources */,
+				9B46C3961D5501DA0059D249 /* humidity.png in Resources */,
 				9B22E2E91D491F2D00E784E6 /* images.png in Resources */,
 				9BD656FA1D412133008C15C6 /* Main.storyboard in Resources */,
 				9BD3F7AF1D4148A400C6F4BC /* kitesurfer.jpeg in Resources */,
@@ -646,12 +691,15 @@
 				9B2D67471D50E6C200F50312 /* WeatherService.swift in Sources */,
 				9BD657001D412197008C15C6 /* MaterialView.swift in Sources */,
 				9BD3F79A1D412DD000C6F4BC /* DataService.swift in Sources */,
+				9B0F9AC61D58CBC100AE38C9 /* User.swift in Sources */,
 				9B695CAC1D52574900E2DF39 /* MagicSeaweedView.swift in Sources */,
 				9BEE01941D522A3C00128DD5 /* SpotListViewController.swift in Sources */,
 				9B2355D71D4A6BD700ADABF6 /* AmazoneService.swift in Sources */,
 				9B0CD36A1D4BBCA90015FC17 /* MenuViewController.swift in Sources */,
+				9B46C38A1D54F4C40059D249 /* MapViewController.swift in Sources */,
 				9BD656CD1D4120CE008C15C6 /* ViewController.swift in Sources */,
 				9B0CD3681D4BA8E10015FC17 /* Spot.swift in Sources */,
+				9B9403581D549FCD00A2A14C /* WebCamViewController.swift in Sources */,
 				9BD657021D412197008C15C6 /* MaterialTextField.swift in Sources */,
 				9B7E929B1D538A7700DB9D13 /* ScrollViewController.swift in Sources */,
 				9BD3F7B21D414E5100C6F4BC /* Feedvc.swift in Sources */,

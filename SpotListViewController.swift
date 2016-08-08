@@ -28,6 +28,12 @@ class SpotListViewController: UIViewController, UITableViewDelegate, UITableView
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? ScrollViewController
         }
         
+        let backgroundImage = UIImage(named: "rainy-wallpaper")
+        let imageView = UIImageView(image:backgroundImage)
+        imageView.frame = self.tableView.frame
+        self.tableView.backgroundView = imageView
+        
+        
         
         DataService.ds.REF_SPOTS.observeSingleEventOfType(.Value, withBlock: { snapshot in
             
@@ -69,14 +75,17 @@ class SpotListViewController: UIViewController, UITableViewDelegate, UITableView
         if let cell = tableView.dequeueReusableCellWithIdentifier("SpotCell") as? SpotCell{
             
             cell.configureCell(spot)
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
+
             return cell
         }else{
             return SpotCell()
         }
         
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("SpotCell", forIndexPath: indexPath) as? SpotCell
-        return cell!
+//        
+//        let cell = tableView.dequeueReusableCellWithIdentifier("SpotCell", forIndexPath: indexPath) as? SpotCell
+//        return cell!
     }
     
     
@@ -84,11 +93,46 @@ class SpotListViewController: UIViewController, UITableViewDelegate, UITableView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-//                let spot = spots[indexPath.row] 
-//                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! Feedvc
-//                controller.spot = spot
-//                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                //controller.navigationItem.leftItemsSupplementBackButton = true
+                let spot = self.spots[indexPath.row]
+
+                let tabBarController = (segue.destinationViewController as! UINavigationController).topViewController as! UITabBarController
+                
+                
+                //set data for the weather view
+                let nav = tabBarController.viewControllers![0] as! UINavigationController
+                let weatherViewController = nav.topViewController as! WeatherViewController
+                weatherViewController.spot = spot
+                tabBarController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                tabBarController.navigationItem.leftItemsSupplementBackButton = true
+                
+
+
+                
+                //set data for magic seaweed view
+                let nav2 = tabBarController.viewControllers![1] as! UINavigationController
+                let magicViewController = nav2.topViewController as! MagicSeaweedViewController
+                magicViewController.spot = spot
+                
+                //set data for
+                let nav3 = tabBarController.viewControllers![2] as! UINavigationController
+                let feedViewController = nav3.topViewController as! Feedvc
+                feedViewController.spot = spot
+                
+                //set data for map view
+                let nav4 = tabBarController.viewControllers![3] as! UINavigationController
+                let mapViewController = nav4.topViewController as! MapViewController
+                mapViewController.spot = spot
+                
+                //set data for webcam view
+                if(spot.hasWebCam){
+                    //set data for webcam view
+                    let nav5 = tabBarController.viewControllers![4] as! UINavigationController
+                    let webCamViewController = nav5.topViewController as! WebCamViewController
+                    webCamViewController.spot = spot
+                }else{
+                    tabBarController.viewControllers?.removeAtIndex(4)
+                }
+            
                 
             }
         }

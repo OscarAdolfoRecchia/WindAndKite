@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if(NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil){
+            print(NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID))
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
             
             //SET UP SIDE BAR MENU AND SHOW THE VIEW CONTROLLER
@@ -69,12 +70,19 @@ class ViewController: UIViewController {
     
     @IBAction func fbBtnPressed(sender:UIButton!){
         let facebookLogin = FBSDKLoginManager()
-        facebookLogin.logInWithReadPermissions(["email"]) { (facebookResult:FBSDKLoginManagerLoginResult!, facebookError:NSError!) in
+        facebookLogin.logInWithReadPermissions(["email","public_profile"]) { (facebookResult:FBSDKLoginManagerLoginResult!, facebookError:NSError!) in
             if(facebookError != nil){
                 print("Facebook login failed error error error \(facebookError)")
             }else{
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
                 print("facebook login gooood \(accessToken)")
+               
+                
+                //get user info
+                self.getFacebookUserInfo()
+                
+                
+
                 
                 DataService.ds.REF_BASE.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: {error, authData in
                     
@@ -174,6 +182,18 @@ class ViewController: UIViewController {
 //        
         sharedDelegate.window?.rootViewController = sharedDelegate.centerContainer
         sharedDelegate.window?.makeKeyAndVisible()
+    }
+    
+    func getFacebookUserInfo(){
+        FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"first_name, last_name, picture.type(large)"]).startWithCompletionHandler { (connection, result, error) -> Void in
+            let strFirstName: String = (result.objectForKey("first_name") as? String)!
+            let strLastName: String = (result.objectForKey("last_name") as? String)!
+            let strPictureURL: String = (result.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as? String)!
+            
+            let user = ["firstName": strFirstName, "lastName": strLastName, "provider": "facebook", "picURL": strPictureURL]
+            
+            NSUserDefaults.standardUserDefaults().setValue(user, forKey: "user")
+        }
     }
 
 }

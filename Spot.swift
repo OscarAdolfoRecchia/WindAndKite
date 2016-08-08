@@ -16,6 +16,10 @@ class Spot{
     private var _mgswUrl: String!
     private var _long: String!
     private var _lat: String!
+    private var _hasWebCam: Bool!
+    private var _webCamURL: String?
+    private var _mgswWidget1URL: String?
+    private var _mgswWidget2URL: String?
     
 //    private var _imgUrl: String?
 //    private var _posts: [String]!
@@ -39,6 +43,22 @@ class Spot{
     
     var lat: String{
         return _lat
+    }
+    
+    var hasWebCam: Bool{
+        return _hasWebCam
+    }
+    
+    var webCamURL: String{
+        return _webCamURL!
+    }
+    
+    var mgswWidget1URL: String{
+        return _mgswWidget1URL!
+    }
+    
+    var mgswWidget2URL: String{
+        return _mgswWidget2URL!
     }
     
     
@@ -70,6 +90,26 @@ class Spot{
         
         if let longitude = spotData["long"] as? String {
             self._long = longitude
+        }
+        
+        if let hasWebCam = spotData["hasWebCam"] as? String {
+            if(hasWebCam == "true"){
+                self._hasWebCam = true
+                if let camURL = spotData["webCamURL"] as? String {
+                    self._webCamURL = camURL
+                }
+            }else{
+                self._hasWebCam = false
+            }
+           
+        }
+        
+        if let widget1URL = spotData["magicWidget1"] as? String{
+            self._mgswWidget1URL = widget1URL
+        }
+        
+        if let widget2URL = spotData["magicWidget2"] as? String{
+            self._mgswWidget2URL = widget2URL
         }
     }
     

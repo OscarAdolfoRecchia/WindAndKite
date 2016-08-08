@@ -13,6 +13,7 @@ class MagicSeaweedView: UIView, UIWebViewDelegate {
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var mgswButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var widgetView: UIWebView!
     
@@ -36,6 +37,7 @@ class MagicSeaweedView: UIView, UIWebViewDelegate {
     
     @IBAction func expandAndShow(sender: AnyObject){
         self.heightConstraint.constant = UIScreen.mainScreen().bounds.height
+  
         self.widgetView.hidden = false
     }
     
