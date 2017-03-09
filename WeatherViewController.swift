@@ -40,13 +40,13 @@ class WeatherViewController: UIViewController{
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         configureSpotInfo(self.spot)
         
     }
     
-    func configureSpotInfo(spot: Spot){
+    func configureSpotInfo(_ spot: Spot){
         
         if let name = spot.spotName as? String {
             self.spotNameLabel.text = name
@@ -55,7 +55,7 @@ class WeatherViewController: UIViewController{
         Alamofire.request(.GET, WEATHER_BASE_URL, parameters: ["q":"\(spot.lat),\(spot.long)", "key" : WEATHER_API_KEY]).responseJSON { response in
             
             switch response.result {
-            case .Success:
+            case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
                     print("JSON: \(json)")
@@ -69,7 +69,7 @@ class WeatherViewController: UIViewController{
                     
                     self.weatherDescriptionLabel.text = json["data"]["current_condition"][0]["weatherDesc"][0]["value"].string
                     
-                    self.timeAndDateLabel.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+                    self.timeAndDateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
                     
                     let currentTemp = json["data"]["current_condition"][0]["temp_C"]
                     self.temperatureLabel.text = currentTemp.string
@@ -109,7 +109,7 @@ class WeatherViewController: UIViewController{
                     
                     
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
             }
             

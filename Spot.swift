@@ -11,15 +11,15 @@ import Foundation
 
 class Spot{
     
-    private var _spotKey: String!
-    private var _spotName: String!
-    private var _mgswUrl: String!
-    private var _long: String!
-    private var _lat: String!
-    private var _hasWebCam: Bool!
-    private var _webCamURL: String?
-    private var _mgswWidget1URL: String?
-    private var _mgswWidget2URL: String?
+    fileprivate var _spotKey: String!
+    fileprivate var _spotName: String!
+    fileprivate var _mgswUrl: String!
+    fileprivate var _long: String!
+    fileprivate var _lat: String!
+    fileprivate var _hasWebCam: Bool!
+    fileprivate var _webCamURL: String?
+    fileprivate var _mgswWidget1URL: String?
+    fileprivate var _mgswWidget2URL: String?
     
 //    private var _imgUrl: String?
 //    private var _posts: [String]!

@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import DrawerController
 
-let sharedDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let sharedDelegate = UIApplication.shared.delegate as! AppDelegate
 
 class ViewController: UIViewController {
     
@@ -53,12 +53,12 @@ class ViewController: UIViewController {
     
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if(NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil){
-            print(NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID))
-            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+        if(UserDefaults.standard.value(forKey: KEY_UID) != nil){
+            print(UserDefaults.standard.value(forKey: KEY_UID))
+            self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
             
             //SET UP SIDE BAR MENU AND SHOW THE VIEW CONTROLLER
             //self.setUpAndShowViewController()
@@ -68,13 +68,13 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func fbBtnPressed(sender:UIButton!){
+    @IBAction func fbBtnPressed(_ sender:UIButton!){
         let facebookLogin = FBSDKLoginManager()
-        facebookLogin.logInWithReadPermissions(["email","public_profile"]) { (facebookResult:FBSDKLoginManagerLoginResult!, facebookError:NSError!) in
+        facebookLogin.logIn(withReadPermissions: ["email","public_profile"]) { (facebookResult:FBSDKLoginManagerLoginResult!, facebookError:NSError!) in
             if(facebookError != nil){
                 print("Facebook login failed error error error \(facebookError)")
             }else{
-                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                let accessToken = FBSDKAccessToken.current().tokenString
                 print("facebook login gooood \(accessToken)")
                
                 
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
                 
 
                 
-                DataService.ds.REF_BASE.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: {error, authData in
+                DataService.ds.REF_BASE.auth(withOAuthProvider: "facebook", token: accessToken, withCompletionBlock: {error, authData in
                     
                     if(error != nil){
                         print("login failed")
@@ -94,10 +94,10 @@ class ViewController: UIViewController {
                         let user = ["provider": authData.provider!]
                         DataService.ds.createFireBaseUser(authData.uid, user: user)
                         
-                        NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
+                        UserDefaults.standard.setValue(authData.uid, forKey: KEY_UID)
                        
                         
-                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                        self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
                         //set up drawer controller and set drawer as root
                         //SET UP SIDE BAR MENU AND SHOW THE VIEW CONTROLLER
 
@@ -109,8 +109,8 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func emailBtnPressed(sender:UIButton){
-        if let email = emailField.text where email != "", let pw = passwordField.text where pw != ""{
+    @IBAction func emailBtnPressed(_ sender:UIButton){
+        if let email = emailField.text, email != "", let pw = passwordField.text, pw != ""{
             
             DataService.ds.REF_BASE.authUser(email, password: pw, withCompletionBlock:{
                 error, authData in
@@ -125,14 +125,14 @@ class ViewController: UIViewController {
                             if(error != nil){
                                 self.showErrorAlert("Could not create account", msg: "Bummer")
                             }else{
-                                NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+                                UserDefaults.standard.setValue(result?[KEY_UID], forKey: KEY_UID)
                                 DataService.ds.REF_BASE.authUser(email, password: pw, withCompletionBlock:{
                                     error,authData in
                                     
-                                    let user = ["provider": authData.provider!]
+                                    let user = ["provider": authData?.provider!]
                                     DataService.ds.createFireBaseUser(authData.uid, user: user)
                                 })
-                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender:nil)
+                                self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender:nil)
                             }
                         })
                     }
@@ -149,12 +149,12 @@ class ViewController: UIViewController {
     
 
     
-    func showErrorAlert(title:String,msg: String){
-        let alert = UIAlertController(title:title, message: msg,preferredStyle: .Alert)
-        let action = UIAlertAction(title:"OK", style: .Default, handler:nil)
+    func showErrorAlert(_ title:String,msg: String){
+        let alert = UIAlertController(title:title, message: msg,preferredStyle: .alert)
+        let action = UIAlertAction(title:"OK", style: .default, handler:nil)
         
         alert.addAction(action)
-        presentViewController(alert, animated:true, completion: nil)
+        present(alert, animated:true, completion: nil)
         
     }
     
@@ -163,13 +163,13 @@ class ViewController: UIViewController {
         //set up drawer controller and set drawer as root
         //SET UP SIDE BAR MENU AND SHOW THE VIEW CONTROLLER
         
-        sharedDelegate.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        sharedDelegate.window = UIWindow(frame: UIScreen.main.bounds)
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
         let rootViewController = sharedDelegate.window?.rootViewController
         
-        let centerViewController = storyBoard.instantiateViewControllerWithIdentifier("SpotListViewController") as! SpotListViewController
-        let menuViewController = storyBoard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+        let centerViewController = storyBoard.instantiateViewController(withIdentifier: "SpotListViewController") as! SpotListViewController
+        let menuViewController = storyBoard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         
         var leftSideNav = UINavigationController(rootViewController: menuViewController)
         var centerNav = UINavigationController(rootViewController: centerViewController)
@@ -185,14 +185,14 @@ class ViewController: UIViewController {
     }
     
     func getFacebookUserInfo(){
-        FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"first_name, last_name, picture.type(large)"]).startWithCompletionHandler { (connection, result, error) -> Void in
-            let strFirstName: String = (result.objectForKey("first_name") as? String)!
-            let strLastName: String = (result.objectForKey("last_name") as? String)!
-            let strPictureURL: String = (result.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as? String)!
+        FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"first_name, last_name, picture.type(large)"]).start { (connection, result, error) -> Void in
+            let strFirstName: String = (result.object(forKey: "first_name") as? String)!
+            let strLastName: String = (result.object(forKey: "last_name") as? String)!
+            let strPictureURL: String = (result.object(forKey: "picture")?.object(forKey: "data")?.object(forKey: "url") as? String)!
             
             let user = ["firstName": strFirstName, "lastName": strLastName, "provider": "facebook", "picURL": strPictureURL]
             
-            NSUserDefaults.standardUserDefaults().setValue(user, forKey: "user")
+            UserDefaults.standard.setValue(user, forKey: "user")
         }
     }
 

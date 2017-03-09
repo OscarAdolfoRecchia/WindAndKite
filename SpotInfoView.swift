@@ -25,11 +25,11 @@ class SpotInfoView: UIView {
     }
     
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         print("drawing the cell")
     }
     
-    func configureSpotInfo(spot: Spot){
+    func configureSpotInfo(_ spot: Spot){
         
         if let name = spot.spotName as? String {
             self.spotNameLabel.text = name
@@ -38,7 +38,7 @@ class SpotInfoView: UIView {
         Alamofire.request(.GET, WEATHER_BASE_URL, parameters: ["q":"\(spot.lat),\(spot.long)", "key" : WEATHER_API_KEY]).responseJSON { response in
             
             switch response.result {
-            case .Success:
+            case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
                     print("JSON: \(json)")
@@ -52,9 +52,9 @@ class SpotInfoView: UIView {
                     
                     //self.weatherDescriptionLabel.text = json["data"]["current_condition"][0]["weatherDesc"][0]["value"].string
                     
-                    self.timeAndDateLabel.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+                    self.timeAndDateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .short)
                 }
-            case .Failure(let error):
+            case .failure(let error):
                 print(error)
             }
             

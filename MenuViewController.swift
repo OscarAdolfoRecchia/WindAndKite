@@ -11,7 +11,7 @@ import Firebase
 import Alamofire
 
 class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    private var spots = [Spot]()
+    fileprivate var spots = [Spot]()
    
     @IBOutlet weak var tableView: UITableView!
 
@@ -22,15 +22,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
        
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return spots.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         
         

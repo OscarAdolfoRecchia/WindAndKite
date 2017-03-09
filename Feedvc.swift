@@ -37,7 +37,7 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     var imagePicker: UIImagePickerController!
     
-    static var imageCache = NSCache()
+    static var imageCache = NSCache<AnyObject, AnyObject>()
     var posts = [Post]()
     var spot: Spot!
     var imageSelected = false
@@ -54,11 +54,11 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         //Amazon config
         S3BucketName = "pm29-spot-me-app-bucket"
         let CognitoPoolID = "eu-west-1:0968c37c-5841-4c09-94cb-6e5e2b3bc93e"
-        let region = AWSRegionType.EUWest1
+        let region = AWSRegionType.euWest1
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:region,
                                                                 identityPoolId:CognitoPoolID)
         let configuration = AWSServiceConfiguration(region:region, credentialsProvider:credentialsProvider)
-        AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
         
         
         
@@ -80,16 +80,16 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 //        
         
         
-        DataService.ds.REF_POSTS.queryOrderedByChild("spot").queryEqualToValue(self.spot.spotName).observeEventType(.Value, withBlock: { snapshot in
-            print(snapshot.value)
+        DataService.ds.REF_POSTS.queryOrdered(byChild: "spot").queryEqual(toValue: self.spot.spotName).observe(.value, with: { snapshot in
+            print(snapshot?.value)
             self.posts.removeAll()
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot]{
+            if let snapshots = snapshot?.children.allObjects as? [FDataSnapshot]{
                 for snap in snapshots {
                     print("SNAP: \(snap)")
                     
                     if let postDict = snap.value as? Dictionary<String, AnyObject>{
                         let key = snap.key
-                        let post = Post(postKey: key, dictionary:postDict)
+                        let post = Post(postKey: key!, dictionary:postDict)
                         self.posts.append(post)
                         
                     }
@@ -101,30 +101,30 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         //self.spotInfoVIew.configureSpotInfo(self.spot)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.row]
         print(post.postDescription)
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell{
             cell.request?.cancel()
             
             var img: UIImage?
             
             if let url = post.imageUrl {
-                img = Feedvc.imageCache.objectForKey(url) as? UIImage
+                img = Feedvc.imageCache.object(forKey: url as AnyObject) as? UIImage
             }
             
             cell.configureCell(post, image: img)
@@ -136,7 +136,7 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let post = posts[indexPath.row]
         if(post.imageUrl == nil){
@@ -146,38 +146,38 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         }
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
     
         imageSelected = true
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        imagePicker.dismiss(animated: true, completion: nil)
         selectImage.image = image
     }
     
    
-    @IBAction func makePost(sender: AnyObject) {
-        if let text = postTextField.text where text != "" {
+    @IBAction func makePost(_ sender: AnyObject) {
+        if let text = postTextField.text, text != "" {
             //uplaod to the text to firebase and create a post
             postToFireBase()
            
 //            let imageData = UIImageJPEGRepresentation(selectImage.image!, 0.2)!
             
             //convert uiimage to
-            let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             if let image = UIImage(data: UIImagePNGRepresentation(selectImage.image!)!) {
-                let fileURL = documentsURL.URLByAppendingPathComponent("temp.png")
+                let fileURL = documentsURL.appendingPathComponent("temp.png")
                 if let pngImageData = UIImagePNGRepresentation(image) {
-                    pngImageData.writeToURL(fileURL, atomically: false)
+                    try? pngImageData.write(to: fileURL, options: [])
                 }
                 let uploadRequest = AWSS3TransferManagerUploadRequest()
-                uploadRequest.body = fileURL
-                uploadRequest.key = NSProcessInfo.processInfo().globallyUniqueString + ".png"
-                uploadRequest.bucket = S3BucketName
-                uploadRequest.contentType = "image/png"
+                uploadRequest?.body = fileURL
+                uploadRequest?.key = ProcessInfo.processInfo.globallyUniqueString + ".png"
+                uploadRequest?.bucket = S3BucketName
+                uploadRequest?.contentType = "image/png"
             
             
-                let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-                transferManager.upload(uploadRequest).continueWithBlock { (task) -> AnyObject! in
+                let transferManager = AWSS3TransferManager.default()
+                transferManager.upload(uploadRequest).continue { (task) -> AnyObject! in
                     if let error = task.error {
                         print("Upload failed ❌ (\(error))")
                     }
@@ -185,7 +185,7 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                         print("Upload failed ❌ (\(exception))")
                     }
                     if task.result != nil {
-                        let s3URL = NSURL(string: "http://s3.amazonaws.com/\(self.S3BucketName)/\(uploadRequest.key!)")!
+                        let s3URL = URL(string: "http://s3.amazonaws.com/\(self.S3BucketName)/\(uploadRequest.key!)")!
                         print("Uploaded to:\n\(s3URL)")
                     }
                     else {
@@ -232,25 +232,25 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         }
     }
     
-    @IBAction func takePicture(sender: AnyObject) {
+    @IBAction func takePicture(_ sender: AnyObject) {
         
-        presentViewController(imagePicker, animated:true, completion: nil)
+        present(imagePicker, animated:true, completion: nil)
     }
     
-    @IBAction func leftSideButtonTapped(sender: AnyObject){
+    @IBAction func leftSideButtonTapped(_ sender: AnyObject){
        
         
     }
     
-    @IBAction func showMagicWidget(sender: AnyObject){
-        self.performSegueWithIdentifier("ShowMagicWidget", sender:nil)
+    @IBAction func showMagicWidget(_ sender: AnyObject){
+        self.performSegue(withIdentifier: "ShowMagicWidget", sender:nil)
 
     }
     
     
-    @IBAction func LeftMenuButtonPressed(sender: UIButton) {
+    @IBAction func LeftMenuButtonPressed(_ sender: UIButton) {
    
-    sharedDelegate.centerContainer?.toggleDrawerSide(DrawerSide.Left, animated: true, completion: nil)
+    sharedDelegate.centerContainer?.toggleDrawerSide(DrawerSide.left, animated: true, completion: nil)
     }
     
     /*
@@ -267,19 +267,19 @@ class Feedvc: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     //upload function to post to firebase
     func postToFireBase(){
-        let user = NSUserDefaults.standardUserDefaults().objectForKey("user") as? Dictionary<String, AnyObject>
+        let user = UserDefaults.standard.object(forKey: "user") as? Dictionary<String, AnyObject>
         
         let post: Dictionary<String, AnyObject> = [
-            "description" : postTextField.text!,
+            "description" : postTextField.text! as AnyObject,
             "username": user!["firstName"]!,
-            "spot" : self.spot.spotName,
+            "spot" : self.spot.spotName as AnyObject,
             "profileImage": user!["picURL"]!,
-            "timeStamp": String(NSDate().timeIntervalSince1970)
+            "timeStamp": String(Date().timeIntervalSince1970) as AnyObject
         ]
         
     
         let fireBasePost = DataService.ds.REF_POSTS.childByAutoId()
-        fireBasePost.setValue(post)
+        fireBasePost?.setValue(post)
         
         postTextField.text = ""
 //        selectImage.image = UIImage(named : "images.png")

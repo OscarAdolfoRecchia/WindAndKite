@@ -9,13 +9,13 @@
 import Foundation
 
 class Post{
-    private var _postDescription: String!
-    private var _imageUrl: String?
+    fileprivate var _postDescription: String!
+    fileprivate var _imageUrl: String?
 //    private var _likes: Int!
-    private var _username: String!
-    private var _postKey: String!
-    private var _spot: String!
-    private var _profileImage: String!
+    fileprivate var _username: String!
+    fileprivate var _postKey: String!
+    fileprivate var _spot: String!
+    fileprivate var _profileImage: String!
     
     var postDescription: String {
         return _postDescription

@@ -11,10 +11,10 @@ import Foundation
 
 class User{
 
-    private var _firstName: String!
-    private var _lastName: String!
-    private var _loginType: String!
-    private var _picURL: String!
+    fileprivate var _firstName: String!
+    fileprivate var _lastName: String!
+    fileprivate var _loginType: String!
+    fileprivate var _picURL: String!
 //    private var _uid: String!
     
     

@@ -27,19 +27,19 @@ class PostCell: UITableViewCell {
         
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         profileImg.layer.cornerRadius = profileImg.frame.size.width/2
         profileImg.clipsToBounds = true
         
         showCaseImg.clipsToBounds = true
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
     
-    func configureCell(post: Post, image: UIImage?){
+    func configureCell(_ post: Post, image: UIImage?){
         self.post = post
         self.descriptionText.text = post.postDescription
         self.userNameLabel.text = post.username
@@ -73,7 +73,7 @@ class PostCell: UITableViewCell {
                 })
             }
         }else{
-           self.showCaseImg.hidden = true
+           self.showCaseImg.isHidden = true
         }
         
     }

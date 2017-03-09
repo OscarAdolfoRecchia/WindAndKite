@@ -22,23 +22,23 @@ class MapViewController: UIViewController {
         let initialLocation = CLLocation(latitude: (spot.lat as NSString).doubleValue, longitude: (spot.long as NSString).doubleValue)
         centerMapOnLocation(initialLocation)
         
-        var latDelta:CLLocationDegrees = 0.01
+        let latDelta:CLLocationDegrees = 0.01
         
-        var longDelta:CLLocationDegrees = 0.01
+        let longDelta:CLLocationDegrees = 0.01
         
-        var theSpan:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
-        var pointLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(
+        let theSpan:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
+        let pointLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(
         initialLocation.coordinate.latitude, initialLocation.coordinate.longitude)
         
-        var region:MKCoordinateRegion = MKCoordinateRegionMake(pointLocation, theSpan)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(pointLocation, theSpan)
         mapView.setRegion(region, animated: true)
         
-        var pinLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(initialLocation.coordinate.latitude, initialLocation.coordinate.longitude)
-        var objectAnnotation = MKPointAnnotation()
+        let pinLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(initialLocation.coordinate.latitude, initialLocation.coordinate.longitude)
+        let objectAnnotation = MKPointAnnotation()
         objectAnnotation.coordinate = pinLocation
         objectAnnotation.title = self.spot.spotName
         
-        self.mapView.mapType = MKMapType.Satellite
+        self.mapView.mapType = MKMapType.satellite
         self.mapView.addAnnotation(objectAnnotation)
     }
 
@@ -62,7 +62,7 @@ class MapViewController: UIViewController {
     
     
     
-    func centerMapOnLocation(location: CLLocation) {
+    func centerMapOnLocation(_ location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }

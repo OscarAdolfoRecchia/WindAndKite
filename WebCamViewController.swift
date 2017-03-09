@@ -17,8 +17,8 @@ class WebCamViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let url = NSURL (string: spot.webCamURL);
-        let requestObj = NSURLRequest(URL: url!);
+        let url = URL (string: spot.webCamURL);
+        let requestObj = URLRequest(url: url!);
         self.webView.loadRequest(requestObj);
     }
 

@@ -20,11 +20,11 @@ class SpotCell: UITableViewCell {
         
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func configureCell(spot: Spot){
+    func configureCell(_ spot: Spot){
         self.spotNameLabel.text = spot.spotName
     }
 }

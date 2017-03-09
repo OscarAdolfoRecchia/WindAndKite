@@ -6,7 +6,7 @@
 //  Copyright © 2016 makadaapp. All rights reserved.
 //
 
-import XCTest
+// import XCTest
 @testable import Kite_Loop
 
 class Kite_LoopTests: XCTestCase {

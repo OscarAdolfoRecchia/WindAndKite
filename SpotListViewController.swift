@@ -13,7 +13,7 @@ import Alamofire
 class SpotListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var detailViewController: ScrollViewController? = nil
-    private var spots = [Spot]()
+    fileprivate var spots = [Spot]()
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -35,17 +35,17 @@ class SpotListViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         
-        DataService.ds.REF_SPOTS.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.ds.REF_SPOTS.observeSingleEvent(of: .value, with: { snapshot in
             
-            print(snapshot.value)
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot]{
+            print(snapshot?.value)
+            if let snapshots = snapshot?.children.allObjects as? [FDataSnapshot]{
                 
                 for snap in snapshots {
                     print("SNAP \(snap)")
                     
                     if let postDict = snap.value as? Dictionary<String, AnyObject>{
                         let key = snap.key
-                        let spot = Spot(spotKey: key, spotData: postDict)
+                        let spot = Spot(spotKey: key!, spotData: postDict)
                         self.spots.append(spot)
                     }
                 }
@@ -59,23 +59,23 @@ class SpotListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return spots.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let spot = spots[indexPath.row]
         print(spot.spotName)
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier("SpotCell") as? SpotCell{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "SpotCell") as? SpotCell{
             
             cell.configureCell(spot)
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator;
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator;
 
             return cell
         }else{
@@ -90,19 +90,19 @@ class SpotListViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let spot = self.spots[indexPath.row]
 
-                let tabBarController = (segue.destinationViewController as! UINavigationController).topViewController as! UITabBarController
+                let tabBarController = (segue.destination as! UINavigationController).topViewController as! UITabBarController
                 
                 
                 //set data for the weather view
                 let nav = tabBarController.viewControllers![0] as! UINavigationController
                 let weatherViewController = nav.topViewController as! WeatherViewController
                 weatherViewController.spot = spot
-                tabBarController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                tabBarController.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 tabBarController.navigationItem.leftItemsSupplementBackButton = true
                 
 
@@ -130,7 +130,7 @@ class SpotListViewController: UIViewController, UITableViewDelegate, UITableView
                     let webCamViewController = nav5.topViewController as! WebCamViewController
                     webCamViewController.spot = spot
                 }else{
-                    tabBarController.viewControllers?.removeAtIndex(4)
+                    tabBarController.viewControllers?.remove(at: 4)
                 }
             
                 

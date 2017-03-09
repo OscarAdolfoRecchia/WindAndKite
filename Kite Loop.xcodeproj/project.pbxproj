@@ -63,7 +63,6 @@
 		9BD656CB1D4120CE008C15C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656CA1D4120CE008C15C6 /* AppDelegate.swift */; };
 		9BD656CD1D4120CE008C15C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656CC1D4120CE008C15C6 /* ViewController.swift */; };
 		9BD656D21D4120CE008C15C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD656D11D4120CE008C15C6 /* Assets.xcassets */; };
-		9BD656EB1D4120CE008C15C6 /* Kite_LoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656EA1D4120CE008C15C6 /* Kite_LoopUITests.swift */; };
 		9BD656FA1D412133008C15C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD656F81D412133008C15C6 /* Main.storyboard */; };
 		9BD656FB1D412133008C15C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD656F91D412133008C15C6 /* LaunchScreen.storyboard */; };
 		9BD657001D412197008C15C6 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656FD1D412197008C15C6 /* MaterialView.swift */; };
@@ -76,23 +75,6 @@
 		9BEE01941D522A3C00128DD5 /* SpotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEE01931D522A3C00128DD5 /* SpotListViewController.swift */; };
 		E26B283FAC09B8910D32F690 /* Pods_Kite_Loop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434462DDBB3DE90090C4DE1F /* Pods_Kite_Loop.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9BD656DC1D4120CE008C15C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9BD656BF1D4120CD008C15C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9BD656C61D4120CE008C15C6;
-			remoteInfo = "Kite Loop";
-		};
-		9BD656E71D4120CE008C15C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9BD656BF1D4120CD008C15C6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9BD656C61D4120CE008C15C6;
-			remoteInfo = "Kite Loop";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		434462DDBB3DE90090C4DE1F /* Pods_Kite_Loop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kite_Loop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,10 +138,8 @@
 		9BD656CC1D4120CE008C15C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "Kite Loop/ViewController.swift"; sourceTree = "<group>"; };
 		9BD656D11D4120CE008C15C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BD656D61D4120CE008C15C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BD656DB1D4120CE008C15C6 /* Kite LoopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kite LoopTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD656DF1D4120CE008C15C6 /* Kite_LoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kite_LoopTests.swift; sourceTree = "<group>"; };
 		9BD656E11D4120CE008C15C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BD656E61D4120CE008C15C6 /* Kite LoopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kite LoopUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD656EA1D4120CE008C15C6 /* Kite_LoopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kite_LoopUITests.swift; sourceTree = "<group>"; };
 		9BD656EC1D4120CE008C15C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BD656F81D412133008C15C6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -190,20 +170,6 @@
 				9BD6570C1D4121CA008C15C6 /* FBSDKCoreKit.framework in Frameworks */,
 				9BD6570D1D4121CA008C15C6 /* FBSDKLoginKit.framework in Frameworks */,
 				E26B283FAC09B8910D32F690 /* Pods_Kite_Loop.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BD656D81D4120CE008C15C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BD656E31D4120CE008C15C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,8 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				9BD656C71D4120CE008C15C6 /* Kite Loop.app */,
-				9BD656DB1D4120CE008C15C6 /* Kite LoopTests.xctest */,
-				9BD656E61D4120CE008C15C6 /* Kite LoopUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,47 +385,6 @@
 			productReference = 9BD656C71D4120CE008C15C6 /* Kite Loop.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9BD656DA1D4120CE008C15C6 /* Kite LoopTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9BD656F21D4120CE008C15C6 /* Build configuration list for PBXNativeTarget "Kite LoopTests" */;
-			buildPhases = (
-				3F6A676A3F73F97F1AEAA268 /* [CP] Check Pods Manifest.lock */,
-				9BD656D71D4120CE008C15C6 /* Sources */,
-				9BD656D81D4120CE008C15C6 /* Frameworks */,
-				9BD656D91D4120CE008C15C6 /* Resources */,
-				3AB6BA897C61457A96CE8435 /* [CP] Embed Pods Frameworks */,
-				46FCD994CBBCAEF78BA41E0B /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9BD656DD1D4120CE008C15C6 /* PBXTargetDependency */,
-			);
-			name = "Kite LoopTests";
-			productName = "Kite LoopTests";
-			productReference = 9BD656DB1D4120CE008C15C6 /* Kite LoopTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		9BD656E51D4120CE008C15C6 /* Kite LoopUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9BD656F51D4120CE008C15C6 /* Build configuration list for PBXNativeTarget "Kite LoopUITests" */;
-			buildPhases = (
-				F220D3A1351ED3F89B221BC8 /* [CP] Check Pods Manifest.lock */,
-				9BD656E21D4120CE008C15C6 /* Sources */,
-				9BD656E31D4120CE008C15C6 /* Frameworks */,
-				9BD656E41D4120CE008C15C6 /* Resources */,
-				DACC3E83DB5EE6A84580ACD4 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9BD656E81D4120CE008C15C6 /* PBXTargetDependency */,
-			);
-			name = "Kite LoopUITests";
-			productName = "Kite LoopUITests";
-			productReference = 9BD656E61D4120CE008C15C6 /* Kite LoopUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -475,14 +398,7 @@
 					9BD656C61D4120CE008C15C6 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 5HKW3X5RG2;
-					};
-					9BD656DA1D4120CE008C15C6 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 9BD656C61D4120CE008C15C6;
-					};
-					9BD656E51D4120CE008C15C6 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 9BD656C61D4120CE008C15C6;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -500,8 +416,6 @@
 			projectRoot = "";
 			targets = (
 				9BD656C61D4120CE008C15C6 /* Kite Loop */,
-				9BD656DA1D4120CE008C15C6 /* Kite LoopTests */,
-				9BD656E51D4120CE008C15C6 /* Kite LoopUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -545,20 +459,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BD656D91D4120CE008C15C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BD656E41D4120CE008C15C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -575,51 +475,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kite Loop/Pods-Kite Loop-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3AB6BA897C61457A96CE8435 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kite LoopTests/Pods-Kite LoopTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3F6A676A3F73F97F1AEAA268 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		46FCD994CBBCAEF78BA41E0B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kite LoopTests/Pods-Kite LoopTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		75A8F51FC89E78858043FE16 /* [CP] Check Pods Manifest.lock */ = {
@@ -650,36 +505,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kite Loop/Pods-Kite Loop-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DACC3E83DB5EE6A84580ACD4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kite LoopUITests/Pods-Kite LoopUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F220D3A1351ED3F89B221BC8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -718,35 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9BD656D71D4120CE008C15C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BD656E21D4120CE008C15C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9BD656EB1D4120CE008C15C6 /* Kite_LoopUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9BD656DD1D4120CE008C15C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9BD656C61D4120CE008C15C6 /* Kite Loop */;
-			targetProxy = 9BD656DC1D4120CE008C15C6 /* PBXContainerItemProxy */;
-		};
-		9BD656E81D4120CE008C15C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9BD656C61D4120CE008C15C6 /* Kite Loop */;
-			targetProxy = 9BD656E71D4120CE008C15C6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9BD656ED1D4120CE008C15C6 /* Debug */ = {
@@ -847,8 +644,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "Kite Loop/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.makadaapp.Kite-Loop";
+				PRODUCT_BUNDLE_IDENTIFIER = KiteAndSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -865,54 +663,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = "Kite Loop/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.makadaapp.Kite-Loop";
+				PRODUCT_BUNDLE_IDENTIFIER = KiteAndSpot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		9BD656F31D4120CE008C15C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Kite LoopTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.makadaapp.Kite-LoopTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kite Loop.app/Kite Loop";
-			};
-			name = Debug;
-		};
-		9BD656F41D4120CE008C15C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Kite LoopTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.makadaapp.Kite-LoopTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kite Loop.app/Kite Loop";
-			};
-			name = Release;
-		};
-		9BD656F61D4120CE008C15C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Kite LoopUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.makadaapp.Kite-LoopUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Kite Loop";
-			};
-			name = Debug;
-		};
-		9BD656F71D4120CE008C15C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Kite LoopUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.makadaapp.Kite-LoopUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "Kite Loop";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -933,24 +686,6 @@
 			buildConfigurations = (
 				9BD656F01D4120CE008C15C6 /* Debug */,
 				9BD656F11D4120CE008C15C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9BD656F21D4120CE008C15C6 /* Build configuration list for PBXNativeTarget "Kite LoopTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9BD656F31D4120CE008C15C6 /* Debug */,
-				9BD656F41D4120CE008C15C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9BD656F51D4120CE008C15C6 /* Build configuration list for PBXNativeTarget "Kite LoopUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9BD656F61D4120CE008C15C6 /* Debug */,
-				9BD656F71D4120CE008C15C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
