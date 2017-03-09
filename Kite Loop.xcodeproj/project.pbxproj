@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A4196D81E718E5A005E4A52 /* Kite_LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656DF1D4120CE008C15C6 /* Kite_LoopTests.swift */; };
 		9B0CD3681D4BA8E10015FC17 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CD3671D4BA8E10015FC17 /* Spot.swift */; };
 		9B0CD36A1D4BBCA90015FC17 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CD3691D4BBCA90015FC17 /* MenuViewController.swift */; };
 		9B0CD36C1D4BBFC40015FC17 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CD36B1D4BBFC40015FC17 /* MenuCell.swift */; };
@@ -62,7 +63,6 @@
 		9BD656CB1D4120CE008C15C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656CA1D4120CE008C15C6 /* AppDelegate.swift */; };
 		9BD656CD1D4120CE008C15C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656CC1D4120CE008C15C6 /* ViewController.swift */; };
 		9BD656D21D4120CE008C15C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD656D11D4120CE008C15C6 /* Assets.xcassets */; };
-		9BD656E01D4120CE008C15C6 /* Kite_LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656DF1D4120CE008C15C6 /* Kite_LoopTests.swift */; };
 		9BD656EB1D4120CE008C15C6 /* Kite_LoopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD656EA1D4120CE008C15C6 /* Kite_LoopUITests.swift */; };
 		9BD656FA1D412133008C15C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD656F81D412133008C15C6 /* Main.storyboard */; };
 		9BD656FB1D412133008C15C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD656F91D412133008C15C6 /* LaunchScreen.storyboard */; };
@@ -474,6 +474,7 @@
 				TargetAttributes = {
 					9BD656C61D4120CE008C15C6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 5HKW3X5RG2;
 					};
 					9BD656DA1D4120CE008C15C6 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -704,6 +705,7 @@
 				9B7E929B1D538A7700DB9D13 /* ScrollViewController.swift in Sources */,
 				9BD3F7B21D414E5100C6F4BC /* Feedvc.swift in Sources */,
 				9B2983D51D42344700CB5F0E /* PostCell.swift in Sources */,
+				0A4196D81E718E5A005E4A52 /* Kite_LoopTests.swift in Sources */,
 				9BD657011D412197008C15C6 /* MaterialButton.swift in Sources */,
 				9BD656CB1D4120CE008C15C6 /* AppDelegate.swift in Sources */,
 				9B0CD36C1D4BBFC40015FC17 /* MenuCell.swift in Sources */,
@@ -720,7 +722,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BD656E01D4120CE008C15C6 /* Kite_LoopTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +839,7 @@
 			baseConfigurationReference = 83C00FC6E7D7B80B80E265E6 /* Pods-Kite Loop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5HKW3X5RG2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -855,6 +857,7 @@
 			baseConfigurationReference = C0C77853EAD8D9EE8F5A5BC1 /* Pods-Kite Loop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5HKW3X5RG2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
